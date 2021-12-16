@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" 
+    rel="stylesheet" >
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <script src="https://kit.fontawesome.com/4c536a6bd5.js"
+  crossorigin="anonymous"></script>  
+  <script src="js/scripts.js" defer></script>
+</head>
+<body>
+  <header class="header"> 
+    <div class="header-container"> 
+      <h1 class="title">Library</h1>
+      <nav>
+        <div class="logged-in" id="loggedIn">
+          <button class="btn btn-log-in" id="logInBtn"></button> >
+            Log in
+          </button>
+        </div>
+        <div class="logged-out" id="loggedOut">
+          <button class="btn btn-log-out" id="BtnLogOut"></button> >
+            Log out (hide)
+          </button>
+        </div>
+        <div>
+          <button class="btn btn-green btn-large" id="addBookBtn">
+            Add book
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="main">
+    <div class="books-grid" id="booksGrid"></div>
+  </main>
+
+  <footer class="footer">
+    <p>dragoncartoon - The Odin Project</p>
+    <a href="https://github.com/dragoncartoon" target="_blank">
+      github/dragoncartoon
+    </a>
+  </footer>
+
+  <div class="add-book-panel" id="addBookPanel">
+    <form class="add-book-form" id="addBookForm">
+      <h3 class="big-title">Add new book</h3>
+      <input 
+        class="input"
+        type="text"
+        id="title"
+        placeholder="Title"
+        required
+      >
+      <input 
+      class="input"
+      type="text"
+      id="author"
+      placeholder="Author"
+      required
+      >
+      <input 
+      class="input"
+      type="number"
+      id="pages"
+      placeholder="Pages"
+      required
+      >
+
+      <div class="is-read">
+        <label for="is-read">Have you read it?</label>
+        <input class="check-box" type="checkbox" id="isRead">        
+      </div>
+      <p class="error-msg" id="errorMsg"></p>
+
+      <button class="btn btn-green btn-medium" type="submit">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>

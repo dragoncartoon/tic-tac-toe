@@ -1,0 +1,258 @@
+:root {
+  --body: #f1f3f8;
+  --font: #393b44;
+  --border: #666;
+  --header: #d6e0f0;
+  --title-font: #282a33;
+  --book-card: #e0e2e7;
+  --btn-green: #abf79c;
+  --btn-green-hover: #9ae68b;
+  --btn-green-active: #89d57a;
+  --btn-red: #da9797;
+  --btn-red-hover: #c98686;
+  --btn-red-active: #b87575;
+  --btn-light-green: #d3ffcd;
+  --btn-light-green-hover: #c2eebc;
+  --btn-light-green-active: #b1ddab;
+  --btn-light-red: #ffe8e8;
+  --btn-light-red-hover: #eed7d7;
+  --btn-light-red-active: #ddc6c6;
+  --add-book-panel: #d6e0f0;
+  --add-book-panel-border: #282a33;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 10;
+  margin: 110;
+}
+
+body {
+  background-color: var(--body);
+  color: var(--font);
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  /* footer support */
+  margin-bottom: 100px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+button,
+input {
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  /* outline: red dashed; */
+}
+
+input[type='text'],
+input[type='number'] {
+  cursor: text;
+}
+
+/* HEADER */
+
+.header {
+  border-bottom: 5px solid var(--border);
+  background-color: var(--header);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  padding: 40px;
+  margin: 0 auto;
+}
+
+.title {
+  display: flex;
+  color: var(--title-font);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 100px;
+  line-height: 1;
+  letter-spacing: 10px;
+  text-align: center;
+}
+
+/* .logged-in, */
+.logged-out {
+  display: none;
+  gap: 20px;
+}
+
+.logged-in.active,
+.logged-out.active {
+  display: flex;
+}
+
+
+/* MAIN */
+
+.main {
+  max-width: 1400px;
+  padding: 40px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  margin-top: 40px;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  border: 2px solid var(--border);
+  border-radius: 5px;
+  background-color: var(--book-card);
+  text-align: center;
+}
+
+
+/* FOOTER */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 24px;
+}
+
+
+/* BOOK FORM */
+
+.add-book-panel {
+  /* position: fixed; */
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  border: 2px solid var(--add-book-panel-border);
+  border-radius: 10px;
+  background-color: var(--add-book-panel);
+  text-align: center;
+  /* transform: translate(-50%, -50%) scale(0); */
+  transition: 200ms ease-in-out;
+}
+
+/* .bookForm.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+*/
+
+.add-book-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+} 
+
+
+.input:focus {
+  outline: none;
+  border-color: black;
+}
+
+.is-read {
+  display: flex;
+  gap: 20px;
+}
+
+.checkbox {
+  width: 30px;
+  height: 30px;
+  margin-top: 13px;
+}
+
+/* BUTTONS */
+
+.btn {
+  padding: 10px;
+  border: 2px solid var(--border);
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.15s ease-in-out;
+}
+
+.btn-default:hover {
+  transform: scale(1.1);
+}
+
+.btn-default:focus {
+  transform: scale(1.1);
+}
+
+.btn-medium {
+  font-size: 40px;
+}
+
+.btn-large {
+  padding: 15px;
+  font-size: 50px;
+}
+
+.btn-green {
+  background-color: var(--btn-green);
+}
+
+.btn-green:hover,
+.btn-green:focus {
+  background-color: var(--btn-green-hover);
+}
+
+.btn-green:active {
+  background-color: var(--btn-green-active);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1200px) {
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .header-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .main {
+    max-width: 500px;
+  }
+
+  .books-grid {
+    grid-template-columns: repeat(1, 1fr);
+    color: red;
+  }
+
+  .add-book-panel {
+    max-width: 90%;
+  }
+}
